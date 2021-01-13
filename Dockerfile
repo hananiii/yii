@@ -2,5 +2,4 @@ FROM php:7.4-apache
 COPY . /var/www/html
 
 EXPOSE 80 
-VOLUME [ "/var/www/html"
- ]
+VOLUME [ "/var/www/html"]
