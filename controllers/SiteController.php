@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use Mpdf\Mpdf;
 
 class SiteController extends Controller
 {
@@ -134,6 +135,9 @@ class SiteController extends Controller
 
     public function actionGeneratepdf()
     {
-        return $this->render('generatepdf');   
+        $pdf_content = $this->renderPartial('generatepdf');   
+        $mpdf = new mPDF();
+        $mpdf->WriteHTML($pdf_content);
+        $mpdf->Output();
     }
 }
