@@ -131,4 +131,9 @@ class SiteController extends Controller
         # code...
         return $this->render('telegram');
     }
+
+    public function actionGeneratepdf()
+    {
+        return $this->render('generatepdf');   
+    }
 }
