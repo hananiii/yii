@@ -15,4 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <code><?= __FILE__ ?></code>
+
+    <h2>Generate PDF</h2>
+    <button onclick="document.location='index.php?r=site%2Fgeneratepdf'">Click</button>
 </div>
