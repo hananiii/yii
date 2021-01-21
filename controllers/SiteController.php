@@ -140,4 +140,10 @@ class SiteController extends Controller
         $mpdf->WriteHTML($pdf_content);
         $mpdf->Output();
     }
+
+    public function actionChart()
+    {
+        # code...
+        return $this->render('chart');
+    }
 }

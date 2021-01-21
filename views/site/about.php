@@ -6,6 +6,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use \dosamigos\chartjs\ChartJs;
+use miloschuman\highcharts\Highcharts;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -33,40 +34,5 @@ $this->params['breadcrumbs'][] = $this->title;
     </li>
 
     <h2>Charts</h2>
-    <div>
-        jjj
-    </div>
+    <button onclick="document.location='index.php?r=site%2Fchart'">To chart</button>
 </div>
-<?= ChartJs::widget([
-    'type' => 'line',
-    'options' => [
-        'height' => 100,
-        'width' => 300
-    ],
-    'data' => [
-        'labels' => ["January", "February", "March", "April", "May", "June", "July"],
-        'datasets' => [
-            [
-                'label' => "My First dataset",
-                'backgroundColor' => "rgba(179,181,198,0.2)",
-                'borderColor' => "rgba(179,181,198,1)",
-                'pointBackgroundColor' => "rgba(179,181,198,1)",
-                'pointBorderColor' => "#fff",
-                'pointHoverBackgroundColor' => "#fff",
-                'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                'data' => [65, 59, 90, 81, 56, 55, 40]
-            ],
-            [
-                'label' => "My Second dataset",
-                'backgroundColor' => "rgba(255,99,132,0.2)",
-                'borderColor' => "rgba(255,99,132,1)",
-                'pointBackgroundColor' => "rgba(255,99,132,1)",
-                'pointBorderColor' => "#fff",
-                'pointHoverBackgroundColor' => "#fff",
-                'pointHoverBorderColor' => "rgba(255,99,132,1)",
-                'data' => [28, 48, 40, 19, 96, 27, 100]
-            ]
-        ]
-    ]
-]);
-?>
