@@ -6,10 +6,12 @@
 use yii\helpers\Html;
 use \dosamigos\chartjs\ChartJs;
 use miloschuman\highcharts\Highcharts;
+
 use yii\web\JsExpression;
 
 $this->title = 'Charts';
 $this->params['breadcrumbs'][] = $this->title;
+
 
 
 ?>
@@ -85,25 +87,60 @@ Highcharts::widget([
     'scripts' => [
         'highcharts-more',
         'modules/exporting',
+        'modules/export-data',
+        'modules/accessibility',
         'themes/grid-light',
     ],
-    'options' => '{
-            "title": { "text": "Fruit Consumption" },
+    'options' => '
+        {
+            "title": { "text": "Vegetables Consumption" },
             "xAxis": {
-                "categories": ["Apples", "Bananas", "Oranges"]
+                "categories": ["Carrot", "Tomatoes", "Mushroom"]
             },
             "yAxis": {
-                "title": { "text": "Fruit eaten" }
+                "title": { "text": "Vegetables eaten" }
             },
             "series": [
-                { "name": "Fakhri", "data": [1, 0, 4] },
-                { "name": "Wan", "data": [5, 7,3] }
+                { "name": "Fakhri", "data": [2, 7, 4] },
+                { "name": "Wan", "data": [16, 2,1] }
             ],
             "exporting": {
                 "allowHTML": true
             }
 
-    }'
+        }
+        '
+]);
+?>
+
+<?=
+
+Highcharts::widget([
+    'scripts' => [
+        'highcharts-more',
+        'modules/exporting',
+        'modules/export-data',
+        'modules/accessibility',
+        'themes/grid-light',
+    ], 
+    'options' => '
+        {
+            "title": { "text": "Fruits Consumption" },
+            "xAxis": {
+                "categories": ["Apple", "Oranges", "Watermelon"]
+            },
+            "yAxis": {
+                "title": { "text": "Fruit eaten" }
+            },
+            "series": [
+                { "name": "Fakhri", "data": [2, 7, 4] },
+                { "name": "Wan", "data": [16, 2,1] }
+            ],
+            "exporting": {
+                "allowHTML": true
+            }
+
+        }'
 ]);
 
 ?>
